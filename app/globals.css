@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --primary: #0f766e;
+  --primary-dark: #0b5c57;
+  --accent: #f59e0b;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #11212f;
+  --muted: #52606d;
+  --border: #dce4ea;
+  --font-inter: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --font-playfair: 'Georgia', 'Times New Roman', serif;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.6;
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background-color: rgba(15, 118, 110, 0.2);
+}
+
+a {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(15, 118, 110, 0.35);
+  outline-offset: 3px;
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+  }
+
+  .section-shell {
+    @apply py-16 md:py-20;
+  }
+
+  .eyebrow {
+    @apply mb-4 inline-block text-sm font-bold uppercase tracking-[0.16em] text-brand-700;
+  }
+
+  .eyebrow-light {
+    @apply text-emerald-100;
+  }
+
+  .page-title {
+    @apply max-w-3xl font-display text-[2.1rem] font-extrabold leading-[1.18] sm:text-[2.75rem];
+  }
+
+  .hero-text {
+    @apply text-lg leading-8 text-slate-700;
+  }
+
+  .hero-text-light {
+    @apply text-lg leading-8 text-white/90;
+  }
+
+  .card-surface {
+    @apply rounded-[1.25rem] border border-slate-200 bg-white shadow-soft;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-white px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-brand-900;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold text-brand-700 transition hover:-translate-y-0.5 hover:border-brand-700 hover:text-brand-900;
+  }
+}
