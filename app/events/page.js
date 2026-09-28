@@ -1,10 +1,11 @@
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
-import { events } from '../../lib/content';
+import PageIntro from '../components/PageIntro';
 
 export const metadata = {
-  title: 'Events | World Humanity Services Inc.',
-  description: 'See upcoming World Humanity Services events and community service opportunities.',
+  title: 'Events',
+  description: 'Events and community opportunities from World Humanity Services.',
+  alternates: { canonical: '/events' },
 };
 
 export default function EventsPage() {
@@ -12,27 +13,20 @@ export default function EventsPage() {
     <>
       <SiteHeader />
       <main id="content-start">
-        <section className="bg-gradient-to-br from-brand-500 via-brand-700 to-slate-900 py-20 text-white">
-          <div className="container-shell">
-            <p className="eyebrow eyebrow-light">Upcoming events</p>
-            <h1 className="page-title">
-              Gather with us for service, education, and community connection.
-            </h1>
-            <p className="hero-text-light mt-6 max-w-2xl">
-              Join food drives, school-support efforts, wellness gatherings, and fundraising events that bring our community together.
-            </p>
-          </div>
-        </section>
-
+        <PageIntro
+          eyebrow="Community"
+          title="Come together to make a difference."
+          description="Event details will be shared here when they are available."
+        />
         <section className="section-shell">
-          <div className="container-shell grid gap-6 md:grid-cols-3">
-            {events.map((event) => (
-              <article key={event.title} className="card-surface p-7">
-                <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-brand-700">{event.date}</p>
-                <h3 className="mb-3 text-xl font-semibold text-slate-900">{event.title}</h3>
-                <p className="text-slate-600">{event.description}</p>
-              </article>
-            ))}
+          <div className="container-shell max-w-3xl">
+            <p className="text-slate-600">
+              Interested in getting involved? Reach out to ask about current opportunities.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="/contact" className="btn-ghost">Contact us</a>
+              <a href="/volunteer" className="btn-primary">Volunteer</a>
+            </div>
           </div>
         </section>
       </main>

@@ -9,14 +9,10 @@ export default function sitemap() {
     '/volunteer',
     '/donate',
     '/contact',
-    '/blog',
-    '/events',
   ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
     priority: route === '' ? 1 : 0.8,
   }));
 }

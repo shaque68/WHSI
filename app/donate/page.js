@@ -1,10 +1,13 @@
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
+import PageIntro from '../components/PageIntro';
 import DonationCheckoutForm from '../components/DonationCheckoutForm';
 
 export const metadata = {
-  title: 'Donate | World Humanity Services Inc.',
-  description: 'Support World Humanity Services with one-time or monthly donations that fund education, food, healthcare, and housing assistance.',
+  title: 'Donate',
+  description:
+    'Make a one-time or monthly donation to support World Humanity Services programs.',
+  alternates: { canonical: '/donate' },
 };
 
 export default function DonatePage() {
@@ -12,34 +15,32 @@ export default function DonatePage() {
     <>
       <SiteHeader />
       <main id="content-start">
-        <section className="bg-gradient-to-br from-brand-500 via-brand-700 to-slate-900 py-20 text-white">
-          <div className="container-shell">
-            <p className="eyebrow eyebrow-light">Support our mission</p>
-            <h1 className="page-title">
-              Every gift helps open the door to care, learning, and lasting hope.
-            </h1>
-            <p className="hero-text-light mt-6 max-w-2xl">
-              Your contribution helps fund education, food and water, healthcare, housing, and funeral assistance for families in need.
-            </p>
-          </div>
-        </section>
-
+        <PageIntro
+          eyebrow="Make a difference"
+          title="Give practical support with care."
+          description="Choose a one-time or monthly gift. Your donation is processed securely through Stripe Checkout."
+        />
         <section className="section-shell">
-          <div className="container-shell grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="space-y-4">
-              <article className="card-surface p-7">
-                <h3 className="mb-3 text-xl font-semibold text-slate-900">One-time gift</h3>
-                <p className="text-slate-600">Provide immediate support for relief efforts and direct community care.</p>
-              </article>
-              <article className="card-surface p-7">
-                <h3 className="mb-3 text-xl font-semibold text-slate-900">Monthly partner</h3>
-                <p className="text-slate-600">Help us sustain food, healthcare, and education support throughout the year.</p>
-              </article>
-              <article className="card-surface p-7">
-                <h3 className="mb-3 text-xl font-semibold text-slate-900">Support a specific need</h3>
-                <p className="text-slate-600">Choose to fund school essentials, water projects, medical costs, housing reconstruction, or funeral support.</p>
-              </article>
-            </div>
+          <div className="container-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
+            <aside className="pt-2">
+              <p className="eyebrow">Your gift supports</p>
+              <h2 className="font-display text-3xl font-semibold leading-tight text-brand-900">
+                Essential care for people facing hardship.
+              </h2>
+              <p className="mt-4 leading-7 text-slate-600">
+                Donations help sustain the organization’s work in education, food and water aid, healthcare, housing, and family support.
+              </p>
+              <p className="mt-6 border-l-2 border-accent pl-4 text-sm leading-6 text-slate-600">
+                You’ll review and complete your gift on Stripe’s secure checkout page.
+              </p>
+              <p className="mt-5 text-sm text-slate-600">
+                Questions about how donations support our work?{' '}
+                <a href="/contact" className="font-semibold text-brand-700 underline underline-offset-4 hover:text-brand-900">
+                  Contact our team
+                </a>
+                .
+              </p>
+            </aside>
             <DonationCheckoutForm />
           </div>
         </section>

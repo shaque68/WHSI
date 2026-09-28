@@ -8,9 +8,6 @@ export const metadata = {
   },
   description:
     'World Humanity Services supports education, food and water aid, healthcare, housing, and funeral relief for vulnerable communities in the U.S. and abroad.',
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     title: 'World Humanity Services Inc.',
     description:

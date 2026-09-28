@@ -36,10 +36,10 @@ export default function DonationCheckoutForm() {
   };
 
   return (
-    <div className="card-surface p-7">
-      <h2 className="mb-3 text-2xl font-semibold text-slate-900">Give securely with Stripe</h2>
-      <p className="mb-6 text-slate-600">
-        Choose a gift amount below. You will complete your donation securely on Stripe&apos;s encrypted checkout page.
+    <div className="card-surface p-6 sm:p-8">
+      <h2 className="mb-2 font-display text-2xl font-semibold text-brand-900">Choose your gift</h2>
+      <p className="mb-6 text-sm leading-6 text-slate-600">
+        Select an amount and frequency. Payment details are entered on Stripe Checkout.
       </p>
       <form className="space-y-5" onSubmit={handleSubmit}>
         <fieldset>
@@ -49,7 +49,7 @@ export default function DonationCheckoutForm() {
               ['one-time', 'One-time gift'],
               ['monthly', 'Monthly gift'],
             ].map(([value, label]) => (
-              <label key={value} className={`cursor-pointer rounded-xl border px-4 py-3 font-semibold ${givingType === value ? 'border-brand-700 bg-brand-50 text-brand-900' : 'border-slate-300 text-slate-700'}`}>
+              <label key={value} className={`cursor-pointer rounded-xl border px-4 py-3 text-center font-semibold transition-colors focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-brand-700 ${givingType === value ? 'border-brand-700 bg-brand-50 text-brand-900' : 'border-slate-300 text-slate-700 hover:border-brand-700'}`}>
                 <input
                   className="sr-only"
                   type="radio"
@@ -73,7 +73,8 @@ export default function DonationCheckoutForm() {
               <button
                 key={preset}
                 type="button"
-                className={`rounded-xl border px-3 py-2 font-semibold ${amount === String(preset) ? 'border-brand-700 bg-brand-50 text-brand-900' : 'border-slate-300 text-slate-700 hover:border-brand-700'}`}
+                aria-pressed={amount === String(preset)}
+                className={`min-h-11 rounded-lg border px-3 py-2 font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700 ${amount === String(preset) ? 'border-brand-700 bg-brand-50 text-brand-900' : 'border-slate-300 text-slate-700 hover:border-brand-700'}`}
                 onClick={() => setAmount(String(preset))}
               >
                 ${preset}
@@ -84,7 +85,7 @@ export default function DonationCheckoutForm() {
             <span className="pointer-events-none absolute left-4 top-3 text-slate-500">$</span>
             <input
               id="donation-amount"
-              className="w-full rounded-xl border border-slate-300 bg-white py-3 pl-8 pr-4"
+              className="w-full rounded-lg border border-slate-300 bg-white py-3 pl-8 pr-4 focus:border-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-700/20"
               type="number"
               min="5"
               max="100000"
@@ -102,7 +103,7 @@ export default function DonationCheckoutForm() {
           </label>
           <input
             id="donation-email"
-            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3"
+            className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 focus:border-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-700/20"
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}

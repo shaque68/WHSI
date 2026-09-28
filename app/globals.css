@@ -4,18 +4,14 @@
 
 :root {
   color-scheme: light;
-  --primary: #0f766e;
-  --primary-dark: #0b5c57;
-  --accent: #f59e0b;
-  --background: #f8fafc;
-  --surface: #ffffff;
-  --text: #11212f;
-  --muted: #52606d;
-  --border: #dce4ea;
+  --primary-dark: #103f34;
+  --accent: #e5b65c;
+  --background: #fbfaf6;
+  --text: #1c2e29;
   --font-inter: 'Inter', 'Segoe UI', Arial, sans-serif;
   --font-playfair: 'Georgia', 'Times New Roman', serif;
 }
- 
+
 html {
   scroll-behavior: smooth;
 }
@@ -24,12 +20,14 @@ body {
   margin: 0;
   color: var(--text);
   background: var(--background);
-  line-height: 1.6;
+  line-height: 1.65;
   font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: rgba(15, 118, 110, 0.2);
+  color: var(--primary-dark);
+  background-color: #f2dfb7;
 }
 
 a {
@@ -37,52 +35,68 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(15, 118, 110, 0.35);
+  outline: 2px solid var(--primary-dark);
   outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @layer components {
   .container-shell {
-    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
   }
 
   .section-shell {
-    @apply py-16 md:py-20;
+    @apply py-14 sm:py-16 lg:py-20;
   }
 
   .eyebrow {
-    @apply mb-4 inline-block text-sm font-bold uppercase tracking-[0.16em] text-brand-700;
+    @apply mb-3 inline-block text-xs font-bold uppercase tracking-[0.18em] text-brand-700;
   }
 
   .eyebrow-light {
-    @apply text-emerald-100;
+    @apply text-amber-200;
   }
 
   .page-title {
-    @apply max-w-3xl font-display text-[2.1rem] font-extrabold leading-[1.18] sm:text-[2.75rem];
+    @apply max-w-3xl font-display text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl;
   }
 
   .hero-text {
-    @apply text-lg leading-8 text-slate-700;
+    @apply text-lg leading-8 text-slate-600;
   }
 
   .hero-text-light {
-    @apply text-lg leading-8 text-white/90;
+    @apply text-lg leading-8 text-white/85;
   }
 
   .card-surface {
-    @apply rounded-[1.25rem] border border-slate-200 bg-white shadow-soft;
+    @apply rounded-2xl border border-slate-200/80 bg-white shadow-soft;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:shadow-lg;
+    @apply inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-slate-950 transition hover:bg-amber-300;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-brand-900;
+    @apply inline-flex min-h-12 items-center justify-center rounded-full border border-white/60 px-6 py-3 font-semibold text-white transition hover:border-white hover:bg-white/10;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold text-brand-700 transition hover:-translate-y-0.5 hover:border-brand-700 hover:text-brand-900;
+    @apply inline-flex min-h-12 items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold text-brand-700 transition hover:border-brand-700 hover:bg-brand-50;
   }
 }

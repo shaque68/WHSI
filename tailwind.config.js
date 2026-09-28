@@ -13,15 +13,15 @@ module.exports = {
       },
       colors: {
         brand: {
-          50: '#f2fbf9',
-          500: '#0f766e',
-          700: '#0b5c57',
-          900: '#0d3b37',
+          50: '#f1f6f2',
+          500: '#145342',
+          700: '#103f34',
+          900: '#0b2c25',
         },
-        accent: '#f59e0b',
+        accent: '#e5b65c',
       },
       boxShadow: {
-        soft: '0 18px 40px rgba(15, 23, 42, 0.08)',
+        soft: '0 12px 32px rgba(22, 49, 40, 0.06)',
       },
     },
   },

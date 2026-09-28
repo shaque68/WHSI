@@ -1,63 +1,59 @@
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
-import InquiryForm from '../components/InquiryForm';
+import PageIntro from '../components/PageIntro';
 
 export const metadata = {
-  title: 'Contact | World Humanity Services Inc.',
-  description: 'Get in touch with World Humanity Services to ask about donations, volunteering, or community support.',
+  title: 'Contact',
+  description:
+    'Contact World Humanity Services with questions about programs, donations, volunteering, or community support.',
+  alternates: { canonical: '/contact' },
 };
-
-const contactFields = [
-  { name: 'name', label: 'Name', type: 'text', required: true },
-  { name: 'email', label: 'Email', type: 'email', required: true },
-  { name: 'subject', label: 'Subject', type: 'text', required: true },
-  { name: 'message', label: 'How can we help?', type: 'textarea' },
-];
 
 export default function ContactPage() {
   return (
     <>
       <SiteHeader />
       <main id="content-start">
-        <section className="bg-gradient-to-br from-brand-500 via-brand-700 to-slate-900 py-20 text-white">
-          <div className="container-shell">
-            <p className="eyebrow eyebrow-light">Contact us</p>
-            <h1 className="page-title">
-              Connect with us about our programs, partnerships, or ways to help.
-            </h1>
-            <p className="hero-text-light mt-6 max-w-2xl">
-              We welcome questions about giving, volunteering, sponsorships, and community partnerships.
-            </p>
-          </div>
-        </section>
-
+        <PageIntro
+          eyebrow="Contact"
+          title="We’re here to connect."
+          description="Reach out with questions about our programs, partnerships, or ways to get involved."
+        />
         <section className="section-shell">
-          <div className="container-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="space-y-4">
-              <article className="card-surface p-7">
-                <h2 className="mb-3 text-xl font-semibold text-slate-900">Email</h2>
-                <a className="text-brand-700 hover:text-brand-900" href="mailto:info@worldhumanityservices.org">
-                  info@worldhumanityservices.org
-                </a>
-              </article>
-              <article className="card-surface p-7">
-                <h2 className="mb-3 text-xl font-semibold text-slate-900">Phone</h2>
-                <a className="text-brand-700 hover:text-brand-900" href="tel:+17182192207">
-                  +1 (718) 219-2207
-                </a>
-              </article>
-              <article className="card-surface p-7">
-                <h2 className="mb-3 text-xl font-semibold text-slate-900">Visit</h2>
-                <p className="text-slate-600">129 N Grove Street<br />Freeport, NY 11520</p>
-              </article>
+          <div className="container-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+            <div>
+              <p className="eyebrow">Get in touch</p>
+              <h2 className="font-display text-3xl font-semibold text-brand-900">
+                Talk with our team.
+              </h2>
+              <p className="mt-3 text-slate-600">
+                Email or call us directly. We’re glad to hear from you.
+              </p>
             </div>
-            <InquiryForm
-              title="Send us a message"
-              description="Share your details and we will follow up as soon as possible."
-              fields={contactFields}
-              submitLabel="Send message"
-              successMessage="Thank you! We received your message and will reach out soon."
-            />
+            <address className="not-italic">
+              <dl className="divide-y divide-slate-200 border-y border-slate-200">
+                <div className="grid gap-1 py-5 sm:grid-cols-[8rem_1fr] sm:gap-4">
+                  <dt className="text-sm font-semibold text-slate-500">Email</dt>
+                  <dd>
+                    <a className="font-medium text-brand-700 hover:text-brand-900" href="mailto:info@worldhumanityservices.org">
+                      info@worldhumanityservices.org
+                    </a>
+                  </dd>
+                </div>
+                <div className="grid gap-1 py-5 sm:grid-cols-[8rem_1fr] sm:gap-4">
+                  <dt className="text-sm font-semibold text-slate-500">Phone</dt>
+                  <dd>
+                    <a className="font-medium text-brand-700 hover:text-brand-900" href="tel:+17182192207">
+                      +1 (718) 219-2207
+                    </a>
+                  </dd>
+                </div>
+                <div className="grid gap-1 py-5 sm:grid-cols-[8rem_1fr] sm:gap-4">
+                  <dt className="text-sm font-semibold text-slate-500">Address</dt>
+                  <dd className="text-slate-700">129 N Grove Street<br />Freeport, NY 11520</dd>
+                </div>
+              </dl>
+            </address>
           </div>
         </section>
       </main>

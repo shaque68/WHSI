@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 
 export const metadata = {
   title: 'Page Not Found',
   description: 'The page you requested could not be found.',
+  robots: { index: false, follow: true },
 };
 
 export default function NotFound() {
@@ -21,12 +21,12 @@ export default function NotFound() {
             The page may have moved or no longer exists. Please return home or visit one of our main pages.
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <Link href="/" className="btn-primary">
+            <a href="/" className="btn-primary">
               Go home
-            </Link>
-            <Link href="/contact" className="btn-ghost">
+            </a>
+            <a href="/contact" className="btn-ghost">
               Contact us
-            </Link>
+            </a>
           </div>
         </div>
       </main>
