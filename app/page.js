@@ -3,6 +3,65 @@ import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 import { programs } from '../lib/content';
 
+const featuredImages = [
+  {
+    title: 'Education support',
+    description: 'Helping students access learning and build brighter futures.',
+    src: '/images/programs/education-support.webp',
+    alt: 'Students gathered around a laptop in a classroom',
+    width: 1280,
+    height: 893,
+  },
+  {
+    title: 'Food, water & essential aid',
+    description: 'Providing clean water and practical help for everyday needs.',
+    src: '/images/programs/water-support.webp',
+    alt: 'Hands collecting water above a body of water',
+    width: 1280,
+    height: 853,
+  },
+  {
+    title: 'Food assistance',
+    description: 'Standing with families as they work toward greater stability.',
+    src: '/images/programs/food-assistance.webp',
+    alt: 'An older woman holding a bowl',
+    width: 700,
+    height: 1050,
+  },
+  {
+    title: 'Learning support',
+    description: 'Helping young people access the tools and support to learn.',
+    src: '/images/programs/learning-support.webp',
+    alt: 'An educator working with students gathered around a table',
+    width: 700,
+    height: 1050,
+  },
+  {
+    title: 'Education access',
+    description: 'Opening pathways to classrooms and new opportunities.',
+    src: '/images/programs/education-access.webp',
+    alt: 'Students riding together on a school bus',
+    width: 1280,
+    height: 793,
+  },
+  {
+    title: 'Financial assistance',
+    description: 'Providing practical financial support when families need it.',
+    src: '/images/programs/financial-assistance.webp',
+    alt: 'Hands holding coins',
+    width: 1280,
+    height: 853,
+  },
+  {
+    title: 'Community relief',
+    description: 'Supporting people and communities through difficult times.',
+    src: '/images/programs/community-relief.webp',
+    alt: 'People walking through a flooded residential area',
+    width: 1280,
+    height: 853,
+  },
+];
+
 export const metadata = {
   title: { absolute: 'World Humanity Services Inc. | Compassion in action' },
   description:
@@ -36,18 +95,25 @@ export default function HomePage() {
               </div>
             </div>
 
-            <aside className="rounded-3xl border border-white/10 bg-white/[0.07] p-7 sm:p-9">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber-200">
-                Here when it matters
-              </p>
-              <ul className="mt-5 divide-y divide-white/15">
-                <li className="py-4 text-lg font-medium">Support for learning</li>
-                <li className="py-4 text-lg font-medium">Help with everyday essentials</li>
-                <li className="py-4 text-lg font-medium">Care through difficult times</li>
-              </ul>
-              <p className="mt-2 text-sm leading-6 text-white/70">
-                Rooted in compassion. Focused on practical help.
-              </p>
+            <aside className="relative min-h-80 overflow-hidden rounded-3xl sm:min-h-[26rem]">
+              <Image
+                src="/images/programs/community-support.webp"
+                alt="A woman standing among temporary shelters in a community"
+                width={1280}
+                height={853}
+                priority
+                unoptimized
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-950/90 via-brand-950/10 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-amber-200">
+                  Here when it matters
+                </p>
+                <p className="mt-2 max-w-sm text-xl font-semibold leading-snug">
+                  Practical support for people and communities facing hardship.
+                </p>
+              </div>
             </aside>
           </div>
         </section>
@@ -81,45 +147,29 @@ export default function HomePage() {
             <div className="max-w-2xl">
               <p className="eyebrow">Programs in focus</p>
               <h2 className="font-display text-3xl font-semibold text-brand-900 sm:text-4xl">
-                Support for learning and clean water.
+                See the needs we work to address.
               </h2>
               <p className="mt-3 text-slate-600">
-                These illustrative photos show two of the essential needs our programs address; they do not depict specific WHSI projects.
+                These representative images illustrate the kinds of needs our programs address.
               </p>
             </div>
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <article className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                <Image
-                  src="/images/programs/education-support.webp"
-                  alt="Students gathered around a laptop in a classroom"
-                  width={1280}
-                  height={893}
-                  unoptimized
-                  className="h-64 w-full object-cover sm:h-80"
-                />
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-brand-900">Education support</h3>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">
-                    Helping students access education and the essentials they need to focus on learning.
-                  </p>
-                </div>
-              </article>
-              <article className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                <Image
-                  src="/images/programs/water-support.webp"
-                  alt="Hands collecting water above a body of water"
-                  width={1280}
-                  height={853}
-                  unoptimized
-                  className="h-64 w-full object-cover sm:h-80"
-                />
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-brand-900">Food, water &amp; essential aid</h3>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">
-                    Supporting access to clean water, groceries, and other practical help for families.
-                  </p>
-                </div>
-              </article>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+              {featuredImages.map((image) => (
+                <article key={image.src} className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    unoptimized
+                    className="h-52 w-full object-cover"
+                  />
+                  <div className="p-5">
+                    <h3 className="text-lg font-semibold text-brand-900">{image.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{image.description}</p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
