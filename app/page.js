@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SiteFooter from './components/SiteFooter';
 import SiteHeader from './components/SiteHeader';
 import { programs } from '../lib/content';
@@ -71,6 +72,54 @@ export default function HomePage() {
                   <p className="text-sm leading-7 text-slate-600">{program.description}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-shell">
+          <div className="container-shell">
+            <div className="max-w-2xl">
+              <p className="eyebrow">Programs in focus</p>
+              <h2 className="font-display text-3xl font-semibold text-brand-900 sm:text-4xl">
+                Support for learning and clean water.
+              </h2>
+              <p className="mt-3 text-slate-600">
+                These illustrative photos show two of the essential needs our programs address; they do not depict specific WHSI projects.
+              </p>
+            </div>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <article className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                <Image
+                  src="/images/programs/education-support.webp"
+                  alt="Students gathered around a laptop in a classroom"
+                  width={1280}
+                  height={893}
+                  unoptimized
+                  className="h-64 w-full object-cover sm:h-80"
+                />
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-brand-900">Education support</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    Helping students access education and the essentials they need to focus on learning.
+                  </p>
+                </div>
+              </article>
+              <article className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                <Image
+                  src="/images/programs/water-support.webp"
+                  alt="Hands collecting water above a body of water"
+                  width={1280}
+                  height={853}
+                  unoptimized
+                  className="h-64 w-full object-cover sm:h-80"
+                />
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-brand-900">Food, water &amp; essential aid</h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    Supporting access to clean water, groceries, and other practical help for families.
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
         </section>
