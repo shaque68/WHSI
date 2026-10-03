@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
 import PageIntro from '../components/PageIntro';
@@ -53,6 +54,23 @@ export default function AboutPage() {
                 Explore our programs <span className="ml-2" aria-hidden="true">→</span>
               </a>
             </div>
+          </div>
+        </section>
+        <section className="pb-14 sm:pb-16 lg:pb-20">
+          <div className="container-shell">
+            <figure className="relative overflow-hidden rounded-3xl">
+              <Image
+                src="/images/programs/community-support.webp"
+                alt="A woman standing among temporary shelters in a community"
+                width={1280}
+                height={853}
+                unoptimized
+                className="h-72 w-full object-cover sm:h-[26rem]"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-950/90 to-transparent px-6 pb-6 pt-16 text-sm text-white sm:px-8 sm:pb-8">
+                Representative imagery of the communities our work seeks to support.
+              </figcaption>
+            </figure>
           </div>
         </section>
         <section className="border-y border-brand-900/5 bg-[#f1f3ec] py-14 sm:py-16">

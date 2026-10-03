@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
 import PageIntro from '../components/PageIntro';
@@ -22,6 +23,63 @@ export default function ProgramsPage() {
         />
         <section className="section-shell">
           <div className="container-shell">
+            <div className="mb-10">
+              <div className="max-w-2xl">
+                <p className="eyebrow">Our work in focus</p>
+                <h2 className="font-display text-3xl font-semibold text-brand-900 sm:text-4xl">
+                  Support for essential needs.
+                </h2>
+                <p className="mt-3 text-slate-600">
+                  Representative images illustrate some of the needs our programs address; they are not documentation of specific WHSI projects.
+                </p>
+              </div>
+              <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                <figure className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <Image
+                    src="/images/programs/education-access.webp"
+                    alt="Students riding together on a school bus"
+                    width={1280}
+                    height={793}
+                    unoptimized
+                    className="h-48 w-full object-cover"
+                  />
+                  <figcaption className="p-4 font-semibold text-brand-900">Education</figcaption>
+                </figure>
+                <figure className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <Image
+                    src="/images/programs/water-support.webp"
+                    alt="Hands collecting water above a body of water"
+                    width={1280}
+                    height={853}
+                    unoptimized
+                    className="h-48 w-full object-cover"
+                  />
+                  <figcaption className="p-4 font-semibold text-brand-900">Clean water</figcaption>
+                </figure>
+                <figure className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <Image
+                    src="/images/programs/food-assistance.webp"
+                    alt="An older woman holding a bowl"
+                    width={700}
+                    height={1050}
+                    unoptimized
+                    className="h-48 w-full object-cover"
+                  />
+                  <figcaption className="p-4 font-semibold text-brand-900">Food assistance</figcaption>
+                </figure>
+                <figure className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <Image
+                    src="/images/programs/community-relief.webp"
+                    alt="People walking through a flooded residential area"
+                    width={1280}
+                    height={853}
+                    unoptimized
+                    className="h-48 w-full object-cover"
+                  />
+                  <figcaption className="p-4 font-semibold text-brand-900">Community care</figcaption>
+                </figure>
+              </div>
+            </div>
             <div className="grid gap-x-10 gap-y-9 md:grid-cols-2 lg:grid-cols-3">
               {programs.map((program) => (
                 <article key={program.title} className="border-t-2 border-brand-500 pt-5">

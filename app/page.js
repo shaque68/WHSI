@@ -21,38 +21,6 @@ const featuredImages = [
     height: 853,
   },
   {
-    title: 'Food assistance',
-    description: 'Standing with families as they work toward greater stability.',
-    src: '/images/programs/food-assistance.webp',
-    alt: 'An older woman holding a bowl',
-    width: 700,
-    height: 1050,
-  },
-  {
-    title: 'Learning support',
-    description: 'Helping young people access the tools and support to learn.',
-    src: '/images/programs/learning-support.webp',
-    alt: 'An educator working with students gathered around a table',
-    width: 700,
-    height: 1050,
-  },
-  {
-    title: 'Education access',
-    description: 'Opening pathways to classrooms and new opportunities.',
-    src: '/images/programs/education-access.webp',
-    alt: 'Students riding together on a school bus',
-    width: 1280,
-    height: 793,
-  },
-  {
-    title: 'Financial assistance',
-    description: 'Providing practical financial support when families need it.',
-    src: '/images/programs/financial-assistance.webp',
-    alt: 'Hands holding coins',
-    width: 1280,
-    height: 853,
-  },
-  {
     title: 'Community relief',
     description: 'Supporting people and communities through difficult times.',
     src: '/images/programs/community-relief.webp',
@@ -153,7 +121,7 @@ export default function HomePage() {
                 These representative images illustrate the kinds of needs our programs address.
               </p>
             </div>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
               {featuredImages.map((image) => (
                 <article key={image.src} className="overflow-hidden rounded-2xl bg-white shadow-sm">
                   <Image
