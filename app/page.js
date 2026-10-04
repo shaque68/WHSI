@@ -5,16 +5,14 @@ import { programs } from '../lib/content';
 
 const featuredImages = [
   {
-    title: 'Education support',
-    description: 'Helping students access learning and build brighter futures.',
+    ...programs[0],
     src: '/images/programs/education-support.webp',
     alt: 'Students gathered around a laptop in a classroom',
     width: 1280,
     height: 893,
   },
   {
-    title: 'Food, water & essential aid',
-    description: 'Providing clean water and practical help for everyday needs.',
+    ...programs[1],
     src: '/images/programs/water-support.webp',
     alt: 'Hands collecting water above a body of water',
     width: 1280,
@@ -117,9 +115,6 @@ export default function HomePage() {
               <h2 className="font-display text-3xl font-semibold text-brand-900 sm:text-4xl">
                 See the needs we work to address.
               </h2>
-              <p className="mt-3 text-slate-600">
-                These representative images illustrate the kinds of needs our programs address.
-              </p>
             </div>
             <div className="mt-8 grid gap-5 md:grid-cols-3">
               {featuredImages.map((image) => (

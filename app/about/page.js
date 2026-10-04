@@ -67,9 +67,6 @@ export default function AboutPage() {
                 unoptimized
                 className="h-72 w-full object-cover sm:h-[26rem]"
               />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-950/90 to-transparent px-6 pb-6 pt-16 text-sm text-white sm:px-8 sm:pb-8">
-                Representative imagery of the communities our work seeks to support.
-              </figcaption>
             </figure>
           </div>
         </section>

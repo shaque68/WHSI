@@ -29,9 +29,6 @@ export default function ProgramsPage() {
                 <h2 className="font-display text-3xl font-semibold text-brand-900 sm:text-4xl">
                   Support for essential needs.
                 </h2>
-                <p className="mt-3 text-slate-600">
-                  Representative images illustrate some of the needs our programs address; they are not documentation of specific WHSI projects.
-                </p>
               </div>
               <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 <figure className="overflow-hidden rounded-2xl bg-white shadow-sm">
