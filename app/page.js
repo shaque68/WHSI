@@ -84,6 +84,31 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="section-shell bg-[#f1f3ec]">
+          <div className="container-shell">
+            <div className="grid gap-5 md:grid-cols-3">
+              <article className="rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+                <h2 className="text-lg font-semibold text-brand-900">Real Help Where It Matters</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  We work close to communities to understand their needs and provide real help where it matters.
+                </p>
+              </article>
+              <article className="rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+                <h2 className="text-lg font-semibold text-brand-900">Give Lasting Hope</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  Your generosity helps people access essentials and opportunities for a brighter future.
+                </p>
+              </article>
+              <article className="rounded-2xl bg-white p-6 shadow-sm sm:p-7">
+                <h2 className="text-lg font-semibold text-brand-900">Serve With Dignity</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  We meet people with compassion and respect, recognizing each person’s needs and circumstances.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section className="section-shell">
           <div className="container-shell">
             <div className="max-w-2xl">
