@@ -46,7 +46,7 @@ export default function HomePage() {
             <div>
               <p className="eyebrow eyebrow-light">Compassion in action</p>
               <h1 className="page-title max-w-4xl">
-                We bring hope, dignity, and on the ground support to people facing hardship at home and abroad.
+                We bring hope and in-person support to people facing hardship with dignity
               </h1>
               <p className="hero-text-light mt-6 max-w-2xl">
                 We help people facing hardship access education, essential aid, healthcare, housing, and care for families in times of loss.
