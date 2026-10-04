@@ -86,30 +86,6 @@ export default function HomePage() {
 
         <section className="section-shell">
           <div className="container-shell">
-            <div className="mb-9 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-              <div className="max-w-2xl">
-                <p className="eyebrow">What we do</p>
-                <h2 className="font-display text-3xl font-semibold tracking-tight text-brand-900 sm:text-4xl">
-                  A helping hand for life’s essentials.
-                </h2>
-              </div>
-              <a href="/programs" className="font-semibold text-brand-700 hover:text-brand-900">
-                See all programs <span aria-hidden="true">→</span>
-              </a>
-            </div>
-            <div className="grid gap-5 md:grid-cols-3">
-              {programs.slice(0, 3).map((program) => (
-                <article key={program.title} className="card-surface p-6 sm:p-7">
-                  <h3 className="mb-3 text-lg font-semibold text-brand-900">{program.title}</h3>
-                  <p className="text-sm leading-7 text-slate-600">{program.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section-shell">
-          <div className="container-shell">
             <div className="max-w-2xl">
               <p className="eyebrow">Programs in focus</p>
               <h2 className="font-display text-3xl font-semibold text-brand-900 sm:text-4xl">
