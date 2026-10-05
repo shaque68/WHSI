@@ -30,58 +30,28 @@ export default function ProgramsPage() {
                   Support for essential needs.
                 </h2>
               </div>
-              <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                <figure className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                  <Image
-                    src="/images/programs/education-access.webp"
-                    alt="Students riding together on a school bus"
-                    width={1280}
-                    height={793}
-                    unoptimized
-                    className="h-48 w-full object-cover"
-                  />
-                  <figcaption className="p-4 font-semibold text-brand-900">Education</figcaption>
-                </figure>
-                <figure className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                  <Image
-                    src="/images/programs/water-support.webp"
-                    alt="Hands collecting water above a body of water"
-                    width={1280}
-                    height={853}
-                    unoptimized
-                    className="h-48 w-full object-cover"
-                  />
-                  <figcaption className="p-4 font-semibold text-brand-900">Clean water</figcaption>
-                </figure>
-                <figure className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                  <Image
-                    src="/images/programs/food-assistance.webp"
-                    alt="An older woman holding a bowl"
-                    width={700}
-                    height={1050}
-                    unoptimized
-                    className="h-48 w-full object-cover"
-                  />
-                  <figcaption className="p-4 font-semibold text-brand-900">Food assistance</figcaption>
-                </figure>
-                <figure className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                  <Image
-                    src="/images/programs/community-relief.webp"
-                    alt="People walking through a flooded residential area"
-                    width={1280}
-                    height={853}
-                    unoptimized
-                    className="h-48 w-full object-cover"
-                  />
-                  <figcaption className="p-4 font-semibold text-brand-900">Community care</figcaption>
-                </figure>
-              </div>
             </div>
             <div className="grid gap-x-10 gap-y-9 md:grid-cols-2 lg:grid-cols-3">
               {programs.map((program) => (
-                <article key={program.title} className="border-t-2 border-brand-500 pt-5">
-                  <h2 className="mb-2 text-lg font-semibold text-brand-900">{program.title}</h2>
-                  <p className="text-sm leading-7 text-slate-600">{program.description}</p>
+                <article key={program.title} className="group overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={program.imageSrc}
+                      alt={program.imageAlt}
+                      width={program.imageWidth}
+                      height={program.imageHeight}
+                      unoptimized
+                      className={`h-44 w-full object-cover ${program.imagePosition || 'object-center'} brightness-[.9] contrast-[1.08] saturate-[.85] sepia-[.08] transition duration-500 ease-out motion-safe:group-hover:scale-[1.04] sm:h-48`}
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 bg-brand-950/10 mix-blend-multiply"
+                    />
+                  </div>
+                  <div className="p-5 sm:p-6">
+                    <h2 className="mb-2 text-lg font-semibold text-brand-900">{program.title}</h2>
+                    <p className="text-sm leading-7 text-slate-600">{program.description}</p>
+                  </div>
                 </article>
               ))}
             </div>

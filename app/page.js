@@ -84,6 +84,35 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="section-shell">
+          <div className="container-shell">
+            <div className="max-w-2xl">
+              <p className="eyebrow">Programs in focus</p>
+              <h2 className="font-display text-3xl font-semibold text-brand-900 sm:text-4xl">
+                See the needs we work to address.
+              </h2>
+            </div>
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
+              {featuredImages.map((image) => (
+                <article key={image.src} className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    unoptimized
+                    className="h-auto w-full object-cover"
+                  />
+                  <div className="p-5">
+                    <h3 className="text-lg font-semibold text-brand-900">{image.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">{image.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section-shell bg-[#f1f3ec]">
           <div className="container-shell">
             <div className="grid gap-5 md:grid-cols-3">
@@ -109,47 +138,18 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section-shell">
-          <div className="container-shell">
-            <div className="max-w-2xl">
-              <p className="eyebrow">Programs in focus</p>
-              <h2 className="font-display text-3xl font-semibold text-brand-900 sm:text-4xl">
-                See the needs we work to address.
-              </h2>
-            </div>
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
-              {featuredImages.map((image) => (
-                <article key={image.src} className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    unoptimized
-                    className="h-52 w-full object-cover"
-                  />
-                  <div className="p-5">
-                    <h3 className="text-lg font-semibold text-brand-900">{image.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">{image.description}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="border-y border-brand-900/5 bg-[#f1f3ec] py-12 sm:py-14">
+        <section className="bg-brand-900 py-12 text-white sm:py-14">
           <div className="container-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="max-w-2xl">
-              <p className="eyebrow">Here for our community</p>
-              <h2 className="font-display text-2xl font-semibold text-brand-900 sm:text-3xl">
+              <p className="eyebrow eyebrow-light">Here for our community</p>
+              <h2 className="font-display text-2xl font-semibold text-white sm:text-3xl">
                 Looking for support?
               </h2>
-              <p className="mt-2 text-slate-600">
+              <p className="mt-2 text-white/80">
                 If you or someone you know is facing hardship, contact us to ask about our programs and community support.
               </p>
             </div>
-            <a href="/contact" className="btn-ghost self-start sm:self-auto">
+            <a href="/contact" className="btn-primary self-start sm:self-auto">
               Ask about support
             </a>
           </div>
