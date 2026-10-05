@@ -138,6 +138,23 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="border-y border-brand-900/5 bg-[#f1f3ec] py-12 sm:py-14">
+          <div className="container-shell flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-2xl">
+              <p className="eyebrow">Here for our community</p>
+              <h2 className="font-display text-2xl font-semibold text-brand-900 sm:text-3xl">
+                Looking for support?
+              </h2>
+              <p className="mt-2 text-slate-600">
+                If you or someone you know is facing hardship, contact us to ask about our programs and community support.
+              </p>
+            </div>
+            <a href="/contact" className="btn-ghost self-start sm:self-auto">
+              Ask about support
+            </a>
+          </div>
+        </section>
+
         <section className="border-y border-brand-900/5 bg-[#f1f3ec] py-10 sm:py-12">
           <div className="container-shell flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div className="max-w-2xl">
