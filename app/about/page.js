@@ -60,12 +60,12 @@ export default function AboutPage() {
           <div className="container-shell">
             <figure className="relative overflow-hidden rounded-3xl">
               <Image
-                src="/images/programs/community-support.webp"
-                alt="A woman standing among temporary shelters in a community"
+                src="/images/about-community.jpg"
+                alt="A mother holding her young daughter at a displacement camp"
                 width={1280}
-                height={853}
+                height={914}
                 unoptimized
-                className="h-72 w-full object-cover sm:h-[26rem]"
+                className="h-72 w-full object-cover object-[center_30%] sm:h-[26rem]"
               />
             </figure>
           </div>
@@ -93,3 +93,4 @@ export default function AboutPage() {
     </>
   );
 }
+
